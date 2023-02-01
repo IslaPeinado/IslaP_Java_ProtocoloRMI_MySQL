@@ -11,9 +11,10 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
     BaseDatos bd = new BaseDatos();
     private static final long seralVersionUID = 1L;
 
-    public MaquillajeRMI(int id_producto, String producto, String marca, String categoria, String descripcion, float precio, int stock) {
+    public MaquillajeRMI (int id_producto, String producto, String marca, String categoria, String descripcion, float precio, int stock) {
         super(id_producto, producto, marca, categoria, descripcion, precio, stock);
     }
+
 
     @Override
     public String selectall() throws RemoteException {
@@ -32,7 +33,8 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
         System.out.println("2. Marca");
         System.out.println("3. Categoria");
         System.out.println("4. Stock");
-        System.out.println("5. Salir de la busqueda");
+        System.out.println("5. Mostar todos los productos");
+        System.out.println("6. Salir de la busqueda");
 
         do {
             switch (opcion) {
@@ -53,6 +55,8 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
                     filtro = sc.nextLine();
                     return "SELECT * FROM maquillaje WHERE stock = " + filtro;
                 case 5:
+                    selectall();
+                case 6:
                     System.out.println("Saliendo de la busqueda...");
                     break;
                 default:
@@ -60,7 +64,7 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
                     break;
 
             }
-        } while (opcion != 5);
+        } while (opcion != 6);
 
         return null;
     }
@@ -68,8 +72,18 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
     @Override
     public String insertar() throws RemoteException {
         bd.DataBase();
-
-
+        System.out.println("Nombre del producto");
+        String producto = sc.nextLine();
+        System.out.println("Marca");
+        String marca = sc.nextLine();
+        System.out.println("Categoria");
+        String categoria = sc.nextLine();
+        System.out.println("Descripcion");
+        String descripcion = sc.nextLine();
+        System.out.println("Precio");
+        float precio = sc.nextFloat();
+        System.out.println("Stock");
+        int stock = sc.nextInt();
 
         return "INSERT INTO maquillaje (producto, marca, categoria, descripcion, precio, stock) VALUES (" + producto + ", " + marca + ", " + categoria + ", " + descripcion + ", " + precio + ", " + stock + ")";
     }
@@ -77,15 +91,27 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
     @Override
     public String actualizar() throws RemoteException {
         bd.DataBase();
-
-        System.out.println("Dime el id del producto que quieres actualizar");
-        int id_producto = Integer.parseInt(sc.nextLine());
-
-        if (rs.absolute(id_producto)){
-
+        System.out.println("¿Sabes el id del producto que quieres actualizar? S/N");
+        String opcion = sc.nextLine();
+        if (opcion=="S"){
+            System.out.println("Id del producto a actualizar");
+            //System.out.println("Recuerda sino quieres actualizar un campo, dejarlo en blanco");
+            int id_producto = sc.nextInt();
+            System.out.println("Nombre del producto");
+            String producto = sc.nextLine();
+            System.out.println("Marca");
+            String marca = sc.nextLine();
+            System.out.println("Categoria");
+            String categoria = sc.nextLine();
+            System.out.println("Descripcion");
+            String descripcion = sc.nextLine();
+            System.out.println("Precio");
+            float precio = sc.nextFloat();
+            System.out.println("Stock");
+            int stock = sc.nextInt();
+        } else {
+            selectall();
         }
-
-
 
 
         return null;
@@ -93,6 +119,16 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
 
     @Override
     public String eliminar() throws RemoteException {
+        bd.DataBase();
+        System.out.println("¿Sabes el id del producto que quieres eliminar? S/N");
+        String opcion = sc.nextLine();
+        if (opcion=="S"){
+            System.out.println("Id del producto a eliminar");
+            int id_producto = sc.nextInt();
+            return "DELETE FROM maquillaje WHERE id_producto = " + id_producto;
+        } else {
+            selectall();
+        }
         return null;
     }
 }

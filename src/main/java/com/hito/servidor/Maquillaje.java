@@ -1,6 +1,7 @@
 package com.hito.servidor;
 
 public class Maquillaje {
+
     private int id_producto;
     private String producto;
     private String marca;
@@ -9,6 +10,8 @@ public class Maquillaje {
     private float precio;
     private int stock;
 
+
+    // Constructor
     public Maquillaje(int id_producto, String producto, String marca, String categoria, String descripcion, float precio, int stock) {
         this.id_producto = id_producto;
         this.producto = producto;
@@ -19,6 +22,8 @@ public class Maquillaje {
         this.stock = stock;
     }
 
+
+    // Getters
     public int getId_producto() {
         return id_producto;
     }
@@ -45,5 +50,10 @@ public class Maquillaje {
 
     public int getStock() {
         return stock;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
