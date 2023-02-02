@@ -4,12 +4,14 @@ import com.hito.BaseDatos;
 import com.hito.InterfaceRMI;
 
 import java.rmi.RemoteException;
+import java.sql.*;
 import java.util.Scanner;
 
 public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
-    Scanner sc = new Scanner(System.in);
-    BaseDatos bd = new BaseDatos();
+
+   BaseDatos db = new BaseDatos();
     private static final long seralVersionUID = 1L;
+    Scanner sc = new Scanner(System.in);
 
     public MaquillajeRMI (int id_producto, String producto, String marca, String categoria, String descripcion, float precio, int stock) {
         super(id_producto, producto, marca, categoria, descripcion, precio, stock);
@@ -18,13 +20,12 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
 
     @Override
     public String selectall() throws RemoteException {
-        bd.DataBase();
-        return "SELECT * FROM maquillaje";
+        return db.selectall();
     }
 
     @Override
     public String bucar() throws RemoteException {
-        bd.DataBase();
+
         int opcion = sc.nextInt();
         String filtro = "";
 
@@ -71,7 +72,7 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
 
     @Override
     public String insertar() throws RemoteException {
-        bd.DataBase();
+
         System.out.println("Nombre del producto");
         String producto = sc.nextLine();
         System.out.println("Marca");
@@ -90,7 +91,7 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
 
     @Override
     public String actualizar() throws RemoteException {
-        bd.DataBase();
+
         System.out.println("¿Sabes el id del producto que quieres actualizar? S/N");
         String opcion = sc.nextLine();
         if (opcion=="S"){
@@ -119,7 +120,7 @@ public class MaquillajeRMI extends Maquillaje implements InterfaceRMI {
 
     @Override
     public String eliminar() throws RemoteException {
-        bd.DataBase();
+
         System.out.println("¿Sabes el id del producto que quieres eliminar? S/N");
         String opcion = sc.nextLine();
         if (opcion=="S"){
