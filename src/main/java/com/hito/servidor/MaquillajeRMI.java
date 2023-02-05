@@ -1,6 +1,5 @@
 package com.hito.servidor;
 
-import com.hito.BaseDatos;
 import com.hito.InterfaceRMI;
 
 import java.rmi.RemoteException;
