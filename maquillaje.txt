@@ -1,0 +1,15 @@
+1,Labial rojo,Loreal,Labiales,Labial de alta duración en tono rojo intenso;
+2,Sombra de ojos negra,Maybelline,Sombras,Sombra de ojos en tono negro mate;
+3,Polvo compacto,Nars,Polvos,Polvo compacto de alta cobertura;
+4,Labial rojo,Loreal,Labiales,Labial de alta duración en tono rojo intenso;
+5,Sombra de ojos negra,Maybelline,Sombras,Sombra de ojos en tono negro mate;
+6,Polvo compacto,Nars,Polvos,Polvo compacto de alta cobertura;
+7,Corrector líquido,Mac,Correctores,Corrector líquido de larga duración y alta cobertura;
+8,Blush en crema,Fenty Beauty,Blushes,Blush en crema de acabado natural y duradero;
+9,Lápiz de labios rosa,Huda Beauty,Labiales,Lápiz de labios en tono rosa claro con acabado mate;
+10,Delineador de ojos negro,Kat Von D,Delineadores,Delineador de ojos en tono negro intenso y de larga duración;
+11,Polvo de sol,Laura Mercier,Polvos,Polvo de sol con acabado luminoso y bronceado;
+12,Rimel voluminizador,Benefit,Máscaras,Rimel voluminizador que proporciona volumen y separación a las pestañas;
+13,Perfume de tarde,Dior,Perfumes,Perfume con notas de rosa y jazmín para el uso diario;
+14,Rubor en polvo,Tarte,Blushes,Rubor en polvo de acabado natural y duradero;
+15,Iluminador líquido,Becca,Iluminadores,Iluminador líquido con acabado luminoso y duradero;

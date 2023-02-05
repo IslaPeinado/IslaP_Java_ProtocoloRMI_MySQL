@@ -7,19 +7,16 @@ public class Maquillaje {
     private String marca;
     private String categoria;
     private String descripcion;
-    private float precio;
-    private int stock;
+
 
 
     // Constructor
-    public Maquillaje(int id_producto, String producto, String marca, String categoria, String descripcion, float precio, int stock) {
+    public Maquillaje(int id_producto, String producto, String marca, String categoria, String descripcion) {
         this.id_producto = id_producto;
         this.producto = producto;
         this.marca = marca;
         this.categoria = categoria;
         this.descripcion = descripcion;
-        this.precio = precio;
-        this.stock = stock;
     }
 
 
@@ -44,16 +41,13 @@ public class Maquillaje {
         return descripcion;
     }
 
-    public float getPrecio() {
-        return precio;
-    }
-
-    public int getStock() {
-        return stock;
-    }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "id_producto=" + id_producto +
+                ", producto=" + producto +
+                ", marca=" + marca +
+                ", categoria=" + categoria +
+                ", descripcion=" + descripcion ;
     }
 }
