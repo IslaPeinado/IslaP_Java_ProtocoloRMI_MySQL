@@ -1,7 +1,5 @@
 package com.hito;
 
-import com.hito.servidor.Maquillaje;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.rmi.RemoteException;

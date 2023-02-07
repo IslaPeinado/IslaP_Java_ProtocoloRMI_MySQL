@@ -1,9 +1,6 @@
 package com.hito;
 
-import com.hito.servidor.Maquillaje;
-
 import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.*;
 
 public class BaseDeDatos{

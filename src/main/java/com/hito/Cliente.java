@@ -1,4 +1,4 @@
-package com.hito.cliente;
+package com.hito;
 
 import com.hito.InterfaceRMI;
 
@@ -49,7 +49,7 @@ public class Cliente {
                         break;
                     case 2:
                         System.out.println("Introduzca el nombre del producto");
-                        filtro = sc.next();
+                        filtro = sc.nextLine();
                         System.out.println(objRMI.bucarProducto(filtro));
                         break;
                     case 3:

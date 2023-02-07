@@ -1,4 +1,4 @@
-package com.hito.servidor;
+package com.hito;
 
 public class Maquillaje {
 

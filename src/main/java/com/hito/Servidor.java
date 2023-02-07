@@ -1,7 +1,6 @@
-package com.hito.servidor;
+package com.hito;
 
 
-import com.hito.LogicaServidorRMI;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -29,7 +28,7 @@ public class Servidor {
             Registry registro = LocateRegistry.createRegistry(puerto);
             LogicaServidorRMI cliente = new LogicaServidorRMI();
             registro.rebind("Maquillaje_1", cliente);
-            System.out.println("Nuevo cliente: Host " + host + " - Puerto " + puerto);
+            System.out.println("Host " + host + " - Puerto " + puerto);
         } catch (RemoteException e) {
             System.out.println("Fallo en el registro");
             System.out.println(e.getMessage());
